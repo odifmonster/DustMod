@@ -2,6 +2,7 @@ package lemonster.dustmod.proxy;
 
 import lemonster.dustmod.Config;
 import lemonster.dustmod.blocks.BlockDust;
+import lemonster.dustmod.items.ItemDust;
 import lemonster.dustmod.registries.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -44,5 +45,6 @@ public class CommonProxy {
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
         event.getRegistry().register(new ItemBlock(ModBlocks.blockDust).setRegistryName(ModBlocks.blockDust.getRegistryName()));
+        event.getRegistry().register(new ItemDust());
     }
 }

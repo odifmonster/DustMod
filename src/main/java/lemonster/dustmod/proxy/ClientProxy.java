@@ -1,6 +1,7 @@
 package lemonster.dustmod.proxy;
 
 import lemonster.dustmod.registries.ModBlocks;
+import lemonster.dustmod.registries.ModItems;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -17,5 +18,6 @@ public class ClientProxy extends CommonProxy {
     @SubscribeEvent
     public static void registerModels(ModelRegistryEvent event) {
         ModBlocks.initModels();
+        ModItems.initModels();
     }
 }
