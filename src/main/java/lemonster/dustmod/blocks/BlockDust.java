@@ -20,7 +20,7 @@ public class BlockDust extends Block {
         setHardness(0.1f);
         setSoundType(SoundType.SNOW);
         setLightOpacity(2);
-        setCreativeTab(CreativeTabs.DECORATIONS);
+        setCreativeTab(CreativeTabs.MISC);
     }
 
     @SideOnly(Side.CLIENT)
