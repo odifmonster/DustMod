@@ -1,0 +1,9 @@
+[{
+  "modid": "dustmod",
+  "name": "Dust",
+  "description": "Now that Thanos has snapped, it only seems appropriate that some dust has found its way into the minecraft world as well. When you come across a pile, think of the sheep, the cow, the pig, the villager that had to die to make that pile.",
+  "version": "1.0",
+  "mcversion": "${mcversion}",
+  "authorList": ["Lemonster", "Dust"],
+  "credits": "I would like to think I am not remiss in giving myself the majority of the credit here. After all, it was my pure genius and wit that gave birth to this idea. I suppose, however, that I also have the existence of dust to thank."
+}]
