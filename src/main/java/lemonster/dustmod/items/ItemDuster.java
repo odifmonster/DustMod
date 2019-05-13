@@ -5,7 +5,15 @@ import lemonster.dustmod.registries.ModBlocks;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumActionResult;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -15,6 +23,8 @@ public class ItemDuster extends Item {
         setUnlocalizedName(DustMod.MODID + ".itemduster");
         setRegistryName("itemduster");
         setCreativeTab(CreativeTabs.MISC);
+        setMaxDamage(1);
+        setMaxStackSize(1);
     }
 
     @SideOnly(Side.CLIENT)
@@ -25,5 +35,27 @@ public class ItemDuster extends Item {
     @Override
     public boolean canHarvestBlock(IBlockState blockIn) {
         return blockIn.getBlock() == ModBlocks.blockDust;
+    }
+
+    @Override
+    public boolean onBlockDestroyed(ItemStack stack, World worldIn, IBlockState state, BlockPos pos, EntityLivingBase entityLiving) {
+        if (state.getBlock() != ModBlocks.blockDust) {
+            stack.damageItem(2, entityLiving);
+        }
+        return true;
+    }
+
+    @Override
+    public boolean hitEntity(ItemStack stack, EntityLivingBase target, EntityLivingBase attacker) {
+        stack.damageItem(2, attacker);
+        return true;
+    }
+
+    @Override
+    public float getDestroySpeed(ItemStack stack, IBlockState state) {
+        if (state.getBlock() == ModBlocks.blockDust) {
+            return 10.0f;
+        }
+        return super.getDestroySpeed(stack, state);
     }
 }

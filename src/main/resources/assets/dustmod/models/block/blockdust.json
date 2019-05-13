@@ -1,6 +1,42 @@
 {
-  "parent": "block/cube_all",
+  "parent": "block/thin_block",
   "textures": {
-    "all": "dustmod:blocks/dust"
-  }
+    "particle": "dustmod:blocks/dust",
+    "texture": "dustmod:blocks/dust"
+  },
+  "elements": [{
+    "from": [0, 0, 0],
+    "to": [16, 2, 16],
+    "faces": {
+      "up": {
+        "uv": [0, 0, 16, 16],
+        "texture": "#texture"
+      },
+      "down": {
+        "uv": [0, 0, 16, 16],
+        "texture": "#texture",
+        "cullface": "down"
+      },
+      "north": {
+        "uv": [0, 14, 16, 16],
+        "texture": "#texture",
+        "cullface": "north"
+      },
+      "south": {
+        "uv": [0, 14, 16, 16],
+        "texture": "#texture",
+        "cullface": "south"
+      },
+      "east": {
+        "uv": [0, 14, 16, 16],
+        "texture": "#texture",
+        "cullface": "east"
+      },
+      "west": {
+        "uv": [0, 14, 16, 16],
+        "texture": "#texture",
+        "cullface": "west"
+      }
+    }
+  }]
 }
