@@ -13,6 +13,7 @@ public class ItemDust extends Item {
         setUnlocalizedName(DustMod.MODID + ".itemdust");
         setRegistryName("itemdust");
         setCreativeTab(CreativeTabs.MISC);
+        setMaxStackSize(16);
     }
 
     @SideOnly(Side.CLIENT)

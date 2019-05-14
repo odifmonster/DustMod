@@ -1,4 +1,7 @@
 tile.dustmod.blockdust.name=Pile of Dust
+tile.dustmod.blockdustpan.name=Dust Pan
 
 item.dustmod.itemdust.name=Some Dust
 item.dustmod.itemduster.name=Duster
+
+message.dustmod.hasdust_par=Has Dust: %s
