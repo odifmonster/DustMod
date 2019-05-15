@@ -1,7 +1,7 @@
-package lemonster.dustmod.registries;
+package lemonster.dustmod.registry;
 
-import lemonster.dustmod.items.ItemDust;
-import lemonster.dustmod.items.ItemDuster;
+import lemonster.dustmod.item.ItemDust;
+import lemonster.dustmod.item.ItemDuster;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;

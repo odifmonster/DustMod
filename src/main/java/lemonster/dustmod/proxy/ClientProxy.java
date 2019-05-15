@@ -1,7 +1,7 @@
 package lemonster.dustmod.proxy;
 
-import lemonster.dustmod.registries.ModBlocks;
-import lemonster.dustmod.registries.ModItems;
+import lemonster.dustmod.registry.ModBlocks;
+import lemonster.dustmod.registry.ModItems;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;

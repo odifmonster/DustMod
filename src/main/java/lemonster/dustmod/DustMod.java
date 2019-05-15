@@ -16,7 +16,7 @@ public class DustMod {
     public static CommonProxy proxy;
 
     @Mod.Instance
-    public static DustMod dustMod;
+    public static DustMod instance;
 
     public static Logger logger;
 

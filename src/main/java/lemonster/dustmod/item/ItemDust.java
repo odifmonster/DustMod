@@ -1,4 +1,4 @@
-package lemonster.dustmod.items;
+package lemonster.dustmod.item;
 
 import lemonster.dustmod.DustMod;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;

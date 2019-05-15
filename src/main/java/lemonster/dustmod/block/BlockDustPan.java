@@ -1,7 +1,7 @@
-package lemonster.dustmod.blocks;
+package lemonster.dustmod.block;
 
 import lemonster.dustmod.DustMod;
-import lemonster.dustmod.tileEntities.DustPanTileEntity;
+import lemonster.dustmod.tileentity.TileEntityDustPan;
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
@@ -14,8 +14,6 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.TextComponentTranslation;
-import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
@@ -24,6 +22,9 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import javax.annotation.Nullable;
 
 public class BlockDustPan extends Block implements ITileEntityProvider {
+
+    private static final int GUI_ID = 1;
+
     public BlockDustPan() {
         super(Material.WOOD);
         setUnlocalizedName(DustMod.MODID + ".blockdustpan");
@@ -44,21 +45,19 @@ public class BlockDustPan extends Block implements ITileEntityProvider {
     @Nullable
     @Override
     public TileEntity createNewTileEntity(World worldIn, int meta) {
-        return new DustPanTileEntity();
-    }
-
-    private DustPanTileEntity getTileEntity(World worldIn, BlockPos pos) {
-        return (DustPanTileEntity) worldIn.getTileEntity(pos);
+        return new TileEntityDustPan();
     }
 
     @Override
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
-        if (!worldIn.isRemote) {
-            boolean hasDust = getTileEntity(worldIn, pos).toggleContents();
-            TextComponentTranslation component = new TextComponentTranslation("message.dustmod.hasdust_par", hasDust);
-            component.getStyle().setColor(TextFormatting.GREEN);
-            playerIn.sendStatusMessage(component, false);
+        if (worldIn.isRemote) {
+            return true;
         }
+        TileEntity tileEntity = worldIn.getTileEntity(pos);
+        if (!(tileEntity instanceof TileEntityDustPan)) {
+            return false;
+        }
+        playerIn.openGui(DustMod.instance, GUI_ID, worldIn, pos.getX(), pos.getY(), pos.getZ());
         return true;
     }
 }
