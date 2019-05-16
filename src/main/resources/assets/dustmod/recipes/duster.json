@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " ba",
+    "bab",
+    "ab "
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:stick"
+    },
+    "b": {
+      "item": "minecraft:feather"
+    }
+  },
+  "result": {
+    "item": "dustmod:itemduster"
+  }
+}

@@ -20,7 +20,6 @@ public class ContainerDustPan extends Container {
     private final int PLAYER_INVENTORY_ROWS = 3;
     private final int TE_ROWS = 2;
 
-    private final int PLAYER_INVENTORY_SLOTS = PLAYER_INVENTORY_ROWS*CONTAINER_COLS;
     private final int VANILLA_SLOTS = (PLAYER_INVENTORY_ROWS+HOTBAR_ROWS)*CONTAINER_COLS;
     private final int TE_SLOTS = TE_ROWS*CONTAINER_COLS;
 

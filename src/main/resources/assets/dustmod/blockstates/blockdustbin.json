@@ -1,7 +1,7 @@
 {
   "forge_marker": 1,
   "defaults": {
-    "model": "dustmod:blockdustpan"
+    "model": "dustmod:blockdustbin"
   },
   "variants": {
     "normal": [{}],

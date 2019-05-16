@@ -3,7 +3,7 @@ package lemonster.dustmod.proxy;
 import lemonster.dustmod.Config;
 import lemonster.dustmod.DustMod;
 import lemonster.dustmod.block.BlockDust;
-import lemonster.dustmod.block.BlockDustPan;
+import lemonster.dustmod.block.BlockDustBin;
 import lemonster.dustmod.gui.GuiHandler;
 import lemonster.dustmod.item.ItemDust;
 import lemonster.dustmod.item.ItemDuster;
@@ -48,7 +48,7 @@ public class CommonProxy {
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
         event.getRegistry().register(new BlockDust());
-        event.getRegistry().register(new BlockDustPan());
+        event.getRegistry().register(new BlockDustBin());
 
         GameRegistry.registerTileEntity(TileEntityDustPan.class, DustMod.MODID + "_blockdustpan");
     }
@@ -56,7 +56,7 @@ public class CommonProxy {
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
         event.getRegistry().register(new ItemBlock(ModBlocks.blockDust).setRegistryName(ModBlocks.blockDust.getRegistryName()));
-        event.getRegistry().register(new ItemBlock(ModBlocks.blockDustPan).setRegistryName(ModBlocks.blockDustPan.getRegistryName()));
+        event.getRegistry().register(new ItemBlock(ModBlocks.blockDustBin).setRegistryName(ModBlocks.blockDustBin.getRegistryName()));
 
         event.getRegistry().register(new ItemDust());
         event.getRegistry().register(new ItemDuster());

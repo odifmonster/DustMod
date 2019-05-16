@@ -1,5 +1,5 @@
 tile.dustmod.blockdust.name=Pile of Dust
-tile.dustmod.blockdustpan.name=Dust Pan
+tile.dustmod.blockdustbin.name=Dust Bin
 
 item.dustmod.itemdust.name=Some Dust
 item.dustmod.itemduster.name=Duster

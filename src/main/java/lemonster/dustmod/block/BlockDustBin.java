@@ -21,14 +21,14 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
-public class BlockDustPan extends Block implements ITileEntityProvider {
+public class BlockDustBin extends Block implements ITileEntityProvider {
 
     private static final int GUI_ID = 1;
 
-    public BlockDustPan() {
+    public BlockDustBin() {
         super(Material.WOOD);
-        setUnlocalizedName(DustMod.MODID + ".blockdustpan");
-        setRegistryName("blockdustpan");
+        setUnlocalizedName(DustMod.MODID + ".blockdustbin");
+        setRegistryName("blockdustbin");
         setCreativeTab(CreativeTabs.MISC);
     }
 

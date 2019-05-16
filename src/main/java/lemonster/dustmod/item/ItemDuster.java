@@ -52,6 +52,8 @@ public class ItemDuster extends Item {
         if (state.getBlock() == ModBlocks.blockDust) {
             return 10.0f;
         }
-        return super.getDestroySpeed(stack, state);
+        return 0.0f;
     }
+
+
 }
