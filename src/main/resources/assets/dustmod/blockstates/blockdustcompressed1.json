@@ -1,0 +1,10 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "dustmod:blockdustcompressed1"
+  },
+  "variants": {
+    "normal": [{}],
+    "inventory": [{}]
+  }
+}

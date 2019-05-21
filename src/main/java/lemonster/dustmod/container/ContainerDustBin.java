@@ -1,24 +1,27 @@
 package lemonster.dustmod.container;
 
 import lemonster.dustmod.registry.ModItems;
-import lemonster.dustmod.tileentity.TileEntityDustPan;
+import lemonster.dustmod.tileentity.TileEntityDustBin;
+import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 
-public class ContainerDustPan extends Container {
+public class ContainerDustBin extends Container {
 
-    private TileEntityDustPan te;
+    private TileEntityDustBin te;
 
     private final int CONTAINER_COLS = 9;
     private final int HOTBAR_ROWS = 1;
     private final int PLAYER_INVENTORY_ROWS = 3;
-    private final int TE_ROWS = 2;
+    private final int TE_ROWS = 4;
 
     private final int VANILLA_SLOTS = (PLAYER_INVENTORY_ROWS+HOTBAR_ROWS)*CONTAINER_COLS;
     private final int TE_SLOTS = TE_ROWS*CONTAINER_COLS;
@@ -26,7 +29,7 @@ public class ContainerDustPan extends Container {
     private final int VANILLA_FIRST_SLOT = 0;
     private final int TE_FIRST_SLOT = VANILLA_FIRST_SLOT+VANILLA_SLOTS;
 
-    public ContainerDustPan(IInventory playerInventory, TileEntityDustPan te) {
+    public ContainerDustBin(IInventory playerInventory, TileEntityDustBin te) {
         this.te = te;
 
         addOwnSlots();
@@ -36,15 +39,15 @@ public class ContainerDustPan extends Container {
     private void addPlayerSlots(IInventory playerInventory) {
         for (int row = 0; row < PLAYER_INVENTORY_ROWS; row++) {
             for (int col = 0; col < CONTAINER_COLS; col++) {
-                int x = 8+col*18;
-                int y = 72+row*18;
+                int x = 7+col*18+1;
+                int y = 3+16+TE_ROWS*18+16+row*18+1;
                 addSlotToContainer(new Slot(playerInventory, col+row*9+9, x, y));
             }
         }
 
         for (int col = 0; col < CONTAINER_COLS; col++) {
             int x = 8+col*18;
-            int y = 130;
+            int y = 3+16+TE_ROWS*18+16+PLAYER_INVENTORY_ROWS*18+4+1;
             addSlotToContainer(new Slot(playerInventory, col, x, y));
         }
     }
@@ -71,7 +74,7 @@ public class ContainerDustPan extends Container {
         ItemStack itemStackCopy = itemStack.copy();
 
         if (index >= VANILLA_FIRST_SLOT && index < TE_FIRST_SLOT) {
-            if (itemStack.getItem() == ModItems.itemDust) {
+            if (itemStack.getItem() == ModItems.itemDust || itemStack.getItem().getRegistryName().toString().indexOf("blockdust") != -1 && itemStack.getItem().getRegistryName().toString().indexOf("dustbin") == -1) {
                 return itemStackCopy;
             } else if (!mergeItemStack(itemStack, TE_FIRST_SLOT, TE_FIRST_SLOT+TE_SLOTS, false)) {
                 return ItemStack.EMPTY;

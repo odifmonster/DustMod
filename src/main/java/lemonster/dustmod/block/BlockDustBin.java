@@ -1,7 +1,7 @@
 package lemonster.dustmod.block;
 
 import lemonster.dustmod.DustMod;
-import lemonster.dustmod.tileentity.TileEntityDustPan;
+import lemonster.dustmod.tileentity.TileEntityDustBin;
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
@@ -30,6 +30,7 @@ public class BlockDustBin extends Block implements ITileEntityProvider {
         setUnlocalizedName(DustMod.MODID + ".blockdustbin");
         setRegistryName("blockdustbin");
         setCreativeTab(CreativeTabs.MISC);
+        setHardness(0.5f);
     }
 
     @SideOnly(Side.CLIENT)
@@ -45,7 +46,7 @@ public class BlockDustBin extends Block implements ITileEntityProvider {
     @Nullable
     @Override
     public TileEntity createNewTileEntity(World worldIn, int meta) {
-        return new TileEntityDustPan();
+        return new TileEntityDustBin();
     }
 
     @Override
@@ -54,7 +55,7 @@ public class BlockDustBin extends Block implements ITileEntityProvider {
             return true;
         }
         TileEntity tileEntity = worldIn.getTileEntity(pos);
-        if (!(tileEntity instanceof TileEntityDustPan)) {
+        if (!(tileEntity instanceof TileEntityDustBin)) {
             return false;
         }
         playerIn.openGui(DustMod.instance, GUI_ID, worldIn, pos.getX(), pos.getY(), pos.getZ());

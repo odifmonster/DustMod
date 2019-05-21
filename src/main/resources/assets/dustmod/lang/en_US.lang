@@ -1,5 +1,9 @@
 tile.dustmod.blockdust.name=Pile of Dust
 tile.dustmod.blockdustbin.name=Dust Bin
+tile.dustmod.blockdustcompressed1.name=More Dust
+tile.dustmod.blockdustcompressed2.name=Even More Dust
+tile.dustmod.blockdustcompressed3.name=A Frick Ton of Dust
+tile.dustmod.blockdustcompressed4.name=Too Much Dust
 
 item.dustmod.itemdust.name=Some Dust
 item.dustmod.itemduster.name=Duster

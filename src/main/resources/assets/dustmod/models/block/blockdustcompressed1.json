@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "dustmod:placeholders/placeholder1"
+    "all": "dustmod:placeholders/placeholder2"
   }
 }

@@ -1,7 +1,7 @@
 package lemonster.dustmod.gui;
 
-import lemonster.dustmod.container.ContainerDustPan;
-import lemonster.dustmod.tileentity.TileEntityDustPan;
+import lemonster.dustmod.container.ContainerDustBin;
+import lemonster.dustmod.tileentity.TileEntityDustBin;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
@@ -16,8 +16,8 @@ public class GuiHandler implements IGuiHandler {
     public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
         BlockPos pos = new BlockPos(x, y, z);
         TileEntity te = world.getTileEntity(pos);
-        if (te instanceof TileEntityDustPan) {
-            return new ContainerDustPan(player.inventory, (TileEntityDustPan) te);
+        if (te instanceof TileEntityDustBin) {
+            return new ContainerDustBin(player.inventory, (TileEntityDustBin) te);
         }
         return null;
     }
@@ -27,8 +27,8 @@ public class GuiHandler implements IGuiHandler {
     public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
         BlockPos pos = new BlockPos(x, y, z);
         TileEntity te = world.getTileEntity(pos);
-        if (te instanceof TileEntityDustPan) {
-            return new GuiContainerDustPan((TileEntityDustPan) te, new ContainerDustPan(player.inventory, (TileEntityDustPan) te));
+        if (te instanceof TileEntityDustBin) {
+            return new GuiContainerDustBin((TileEntityDustBin) te, new ContainerDustBin(player.inventory, (TileEntityDustBin) te));
         }
         return null;
     }
